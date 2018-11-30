@@ -1,4 +1,3 @@
-//add modern art code here
 PImage img;
 PImage bb;
 float bspeed=20;
@@ -7,7 +6,9 @@ PImage bbb;
 float b2=500;
 float b2speed=20;
 boolean click= false;
-
+float dot=random(255);
+float dot2=random(255);
+float dotspeed=20;
 
 
 void setup() {
@@ -76,8 +77,39 @@ void draw() {
  textSize(50);
  text("THANK YOU!",200,300);
  
+ //dot
+ fill(50,205,50);
+ ellipse(dot,dot2,10,10);
+ dot=dot+dotspeed;
+ dot2=dot+dotspeed;
  
+ if(dot<10){
+   dotspeed=-20;
+ }
+ if(dot>690){
+   dotspeed=30;
+ }
+ if(dot2<0){
+   dotspeed=20;
+ }
+ if(dot2>700){
+   dotspeed=-10;
+ }
+ 
+ //dots
+ fill(23,32,123);
+ ellipse(random(700),random(700),10,10);
+ 
+ //dotss
+ fill(255,0,0);
+ ellipse(random(700),random(700),10,10);
+ //dotsss
+ fill(100,200,0);
+ ellipse(random(700),random(700),10,10);
 }
+
+
+
 
 void mousePressed() {
   if (click) {
@@ -95,3 +127,7 @@ void mousePressed() {
     click=false;
     }
   }  
+    
+    
+    
+    
